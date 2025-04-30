@@ -1,0 +1,93 @@
+{% include 'partials/header.html' %}
+<div id="ContactForm">
+  <div id="ContactFormBackground">
+    <div id="ContactFormName">
+      Contact Form
+    </div>
+    <form name="sentMessage" action="{{ url_for('contact') }}" method="post">
+      <div id="ContactFormLabelGrid">
+        <div class="ContactFormTopPadding ContactFormRightPadding">
+          <label for="requestedProject" class="SimpleFlexWrapper">
+            Project Name
+            <p class="ContactFormRequiredLabelFormat">
+              (required)
+            </p>
+          </label>
+          <input type="text" class="form-control" id="requestedProject" placeholder="Project Name" required />
+        </div>
+        <div></div>
+        <div class="ContactFormTopPadding ContactFormRightPadding">
+          <label for="requestorName" class="SimpleFlexWrapper">
+            Your Name
+            <p class="ContactFormRequiredLabelFormat">
+              (required)
+            </p>
+          </label>
+          <input type="text" class="form-control" id="requestorName" placeholder="First and Last Name" required />
+        </div>
+        <div class="ContactFormTopPadding ContactFormRightPadding">
+          <label for="requestorEmail" class="SimpleFlexWrapper">
+            Email
+            <p class="ContactFormRequiredLabelFormat">
+              (required)
+            </p>
+          </label>
+          <input type="email" class="form-control" id="requestorEmail" placeholder="Email" required />
+        </div>
+        <div class="ContactFormTopPadding ContactFormRightPadding">
+          <label for="requestorCompany">
+            Company You Work For (if applicable)
+          </label>
+          <input type="text" class="form-control" id="requestorCompany" placeholder="Company Name" />
+        </div>
+        <div class="ContactFormTopPadding ContactFormRightPadding">
+          <label for="requestorPosition">
+            Your Position (if applicable)
+          </label>
+          <input type="text" class="form-control" id="requestorPosition" placeholder="Job Title" />
+        </div>
+      </div>
+      <div class="ContactFormTopPadding">
+        <div>
+          What type of work does your project need?
+        </div>
+        <div class="ContactFormCheckboxGrid">
+          {% for skillType in all_posts.SkillTypes %}
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="skillTypeCheck {{ index }}" name="SkillTypeCheckbox" />
+                <label class="form-check-label" for="skillTypeCheck {{ index }}">
+                {{ skillType }}
+              </label>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="ContactFormTopPadding">
+        <div>
+          Which of my skillsets are most pertinent to this project?
+        </div>
+        <div class="ContactFormCheckboxGrid">
+          {% for skill in all_posts.SkillPages %}
+            {% if skill["display"] == "Yes" %}
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="skillCheck {{ index }}" name="SkillCheckbox" />
+                <label class="form-check-label" for="skillCheck {{ index }}">
+                  {{ skill["skillName"] }}
+                </label>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="ContactFormTopPadding">
+        <button type="submit" class="btn btn-primary">
+          Submit Request
+        </button>
+      </div>
+      {% if msg_sent: %}
+      <h5 id="Success">Success</h5>
+      {% endif %}
+    </form>
+  </div>
+</div>
+{% include 'partials/footer.html' %}

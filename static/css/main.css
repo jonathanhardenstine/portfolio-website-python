@@ -1,0 +1,489 @@
+.gradient-background {
+  background: linear-gradient(270deg, #9cbef1, #F7F9FC, #9cbef1);
+  background-size: 180% 180%;
+  animation: gradient-animation 10s ease infinite;
+  font-family: "Nuosu SIL", sans-serif;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  color: #212529;
+}
+
+a:hover {
+  color: #007BFF;
+}
+
+#NavBuffer {
+  height: 8vh;
+}
+
+#MainPageNav {
+  display: flex; 
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #212529;
+  height: 6vh;
+  font-size: 3vh;
+  position: fixed;
+  width: 100%;
+}
+
+#FooterBuffer {
+  height: 7vh;
+}
+
+#Footer {
+  justify-content: flex-end; 
+  align-items: center;
+  display: flex; 
+  padding-right: 10px; 
+  font-size: 14px;
+  color: #F7F9FC;
+  background-color: #212529;
+  height: 5vh;
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  font-size: 2.5vh;
+
+  img {
+    height: 3vh;
+    width: auto;
+  }
+}
+
+.NavActive {
+  color: #007BFF;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.NavDefault {
+  color: #F7F9FC;
+  text-decoration: none;
+}
+
+.FlexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.SimpleFlexWrapper {
+  display: flex;
+}
+
+.CenterVertHoriz {
+  align-items: center;
+  justify-content: center;
+}
+
+#HomeImg {
+  margin-top: 10vh;
+  height: auto; 
+  width: 12vw;
+}
+
+h1 {
+    font-family: "Tilt Prism", sans-serif;
+    text-align: center;
+    font-weight: 600;
+    font-size: 7.5vmin;
+}
+
+h6 {
+  font-size: 2.9vmin;
+}
+
+h5 {
+  font-size: 3.4vmin;
+}
+
+h4 {
+  font-size: 4vmin;
+}
+
+.SkillTypeGrid {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 100%;
+}
+
+#SkillsTypeNav {
+  display: flex; 
+  justify-content: flex-start;
+}
+
+.SkillTypeOuterBorder {
+  height: 100%;
+  width: 100%;
+  border-radius: 48px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  .SkillTypeInnerBorder {
+    height: 90%;
+    width: 90%;
+    border-radius: 48px;
+  
+    a {
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    
+      img {
+        width: 30%;
+        height: 30%;
+        border-radius: 8px;
+        padding: 2px;
+        align-self: center
+      }
+    }
+  }
+}
+
+.SkillTypeSelected {
+  border-top: 4px solid #007BFF;
+  border-bottom: 4px solid #007BFF;
+
+  a {
+    color: #007BFF;
+    font-weight: 600;
+    text-decoration: none;
+    align-items: center;
+
+    img {
+      background-color: #007BFF;
+    }
+  }
+}
+
+.SkillTypeDefault {
+  border-top: 4px solid #8495AB;
+  border-bottom: 4px solid #8495AB;
+
+  a {
+    color: #8495AB;
+    text-decoration: none;
+    align-items: center;
+
+    img {
+      background-color: #8495AB;
+    }
+  }
+}
+
+.SkillTypeDefault:hover {
+  border-top: 4px solid #56a1f2;
+  border-bottom: 4px solid #56a1f2;
+
+  a {
+    color: #56a1f2;
+    text-decoration: none;
+    align-items: center;
+
+    img {
+      background-color: #56a1f2;
+    }
+  }
+}
+
+.SkillTypeNameDisplay {
+  height: 100%; 
+  justify-content: center; 
+  padding: 0px 4px;
+  font-size: 1.3vw;
+}
+
+#SkillNameCardsContainer {
+  display: flex;
+  height: 100%; 
+  width: 100%; 
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 0px;
+
+  .SkillNameCards {
+    text-align: center;
+    border-radius: 15px;
+    background-color: #c1d7f8;
+
+    .SkillNameCardTextColor {
+      color: #212529;
+      box-shadow: 0 1rem 3rem #6C757D;
+      border-radius: 15px;
+    }
+
+    .TrainingInProgress {
+      color: #495057;
+      background-color: #6C757D;
+      box-shadow: 0 1rem 3rem #6C757D;
+      border-radius: 15px;
+    }
+  
+    .SkillNameCardsLink {
+      display: flex; 
+      flex-direction: column; 
+      width: 100%; 
+      height: 100%;
+      text-decoration: none;
+
+      .SkillNameSizing {
+        text-decoration: underline; 
+        font-size: 1.5vw;
+        font-weight: 600;
+      }
+
+      .SkillCardSubTitles {
+        padding: 0px 5px 5px 5px;
+        text-align: left;
+        font-size: 12px;
+        display: grid; 
+        flex: 1; 
+        grid-template-rows: 25% 41% 34%;
+        
+        .SkillSpecificsSizing {
+          text-align: center; 
+          font-size: 1.2vw;
+        }
+
+        .SkillDescriptionSizing {
+          font-size: 0.85vw; 
+        }
+      
+        .TrainingDescription {
+          display: grid;
+          flex: 1;
+          grid-template-columns: 20% 80%;
+          font-size: 1vw;
+
+          .TrainingDescriptionUnderline {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.SkillNameCardTextColor:hover {
+  background-color: #007BFF;
+}
+
+.CertificationPositioning {
+  display:flex; 
+  
+  .CertificationImg {
+    height: auto;
+    box-shadow: 0 1rem 3rem #6C757D;
+  }
+}
+
+.SkillPage {
+  font-size: 2.7vmin;
+  padding: 2vh 2vw;
+
+  .SkillPageTitle {
+    text-align: center;
+    font-size: 3.4vmin;
+  }
+
+  .SkillPageListItems {
+    display: flex; 
+    width: 100%; 
+    justify-content: space-between;
+
+    .Carousel {
+
+      .ProjectDocumentationDesc {
+        text-align: center; 
+        text-decoration: underline;
+        border-radius: 22px;
+        border: 1px solid #6C757D;
+        margin-bottom: 2px;
+        font-size: 3.4vmin;
+      }
+
+      .ProjectDocumentationImg {
+        width: 100%;
+        height: 400px;
+        border-radius: 22px;
+        padding: 6px;
+        box-shadow: 0 1rem 3rem #6C757D;
+      }
+    }
+
+    video {
+      object-fit: cover;
+      border-radius: 22px;
+      box-shadow: 0 1rem 3rem #6C757D;
+      }
+
+    .PrimaryCertificationImg {
+      width: 70%; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+#AboutMe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 5vw;
+  font-size: 2.7vmin;
+}
+
+#ContactForm {
+  padding: 0rem 3rem;
+  font-size: 2.7vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  #ContactFormBackground {
+    height: fit-content; 
+    width: fit-content;
+    background-color: rgb(203, 218, 237);
+    padding-top: 0.5rem;
+    padding-bottom: 2.5rem;
+    margin: 0px;
+    border: solid #dee2e6;
+    border-width: 1px 0;
+    padding: 1rem;
+
+    #ContactFormName {
+      text-decoration: underline;
+      font-size: 3.7vmin;
+    }
+
+    #ContactFormLabelGrid {
+      display: grid;
+      flex: 1;
+      grid-template-columns: 50% 50%;
+    }
+
+    .ContactFormTopPadding {
+      padding-top: 10px;
+    }
+
+    .ContactFormRightPadding {
+      padding-right: 5vw;
+    }
+
+    button {
+      font-size: 3.7vmin;
+    }
+
+    input {
+      font-size: 3.2vmin;
+    }
+
+    .ContactFormRequiredLabelFormat {
+      padding-left: 5px;
+      margin: 0px;
+      color: #8495AB
+    }
+  
+    .ContactFormCheckboxGrid {
+      display: grid; 
+      flex: 1; 
+      grid-template-columns: 25% 25% 25% 25%;
+    }
+
+    #Success {
+      color: green;
+    }
+
+    #Failed {
+      color: red;
+    }
+  }
+}
+
+/* smaller screen sizes */
+@media (max-width: 1000px) {
+  #SkillNameCardsContainer {
+    .SkillNameCards {
+      width: 40%;
+      height: 10vw;
+      margin: 5px;
+    }
+  }
+
+  .SkillPage {
+    .SkillPageListItems {
+      flex-direction: column;
+
+      .Carousel {
+        width: 80%; 
+        height: auto;
+      }
+    }
+  }
+
+  .CertificationPositioning {
+    flex-direction: column;
+    align-items: center;
+
+    .CertificationImg {
+      width: 60%;
+      margin: 10px 0px;
+    }
+  }
+}
+
+/* larger screen sizes */
+@media (min-width: 1000px) {
+  #SkillNameCardsContainer {
+    .SkillNameCards {
+      width: 30%;
+      height: 23%;
+    }
+  }
+
+  .SkillPage {
+    .SkillPageListItems {
+      flex-direction: row;
+
+      .Carousel {
+        width: 60%; 
+        height: 400px;
+      }
+    }
+  }
+
+  .CertificationPositioning {
+    flex-wrap: wrap; 
+    justify-content: space-evenly; 
+    padding: 5px 0px;
+
+    .CertificationImg {
+      width: 30%;
+    }
+  }
+}
+

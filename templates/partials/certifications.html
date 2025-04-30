@@ -1,0 +1,7 @@
+{% if (all_posts.Certifications|length > 0) %}
+    <div class="CertificationPositioning">
+        {% for certification in all_posts.Certifications %}
+            <img src="static/{{ certification }}" class="CertificationImg" />
+        {% endfor %}
+    </div>
+{% endif %}
