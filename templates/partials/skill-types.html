@@ -1,0 +1,39 @@
+<nav id="SkillsTypeNav" class="FlexColumn">
+    {% if (all_posts.skillTypeData|length > 0) %}
+        {% for skillType in all_posts.skillTypeData %}
+            {% if(all_posts.skillTypeName == skillType["skill_type_name"]) %}
+                <container class="SkillTypeOuterBorder SkillTypeSelected">
+                    <div class="SkillTypeInnerBorder SkillTypeSelected">
+                         <a href="{{ skillType['skill_type_href'] }}">
+                            {% if (skillType["skill_type_display_text"]|length > 0) %}
+                                <div class="SimpleFlexWrapper">
+                                    {% for display_text in skillType["skill_type_display_text"] %}
+                                        <div class="FlexColumn SkillTypeNameDisplay"> {{ display_text|safe }} </div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            <img src="static/{{ skillType['skill_type_src'] }}" alt="{{ skillType['skill_type_src_text'] }}" />
+                        </a>
+                    </div>
+                </container>
+            {% else %}
+                <container>
+                    <container class="SkillTypeOuterBorder SkillTypeDefault">
+                        <div class="SkillTypeInnerBorder SkillTypeDefault">
+                            <a href="{{ skillType['skill_type_href'] }}">
+                                {% if (skillType["skill_type_display_text"]|length > 0) %}
+                                    <div class="SimpleFlexWrapper">
+                                        {% for display_text in skillType["skill_type_display_text"] %}
+                                            <div class="FlexColumn SkillTypeNameDisplay"> {{ display_text|safe }} </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                                <img src="static/{{ skillType['skill_type_src'] }}" />
+                            </a>
+                        </div>
+                    </container>
+                </container>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</nav>

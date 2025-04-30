@@ -1,0 +1,59 @@
+{% include 'partials/header.html' %}
+<div class="FlexColumn">
+    <div class="SkillTypeGrid">
+        {% include 'partials/skill-types.html' %}
+        <nav id="SkillNameCardsContainer">
+            {% if (all_posts.skillCards|length > 0) %}
+                {% for data in all_posts.skillCards %}
+                    <div class="SkillNameCards">
+                        {% if (data.Training[0] == "Udemy course to be completed in 2025" or data.Training[0] == "TBD post-2025") %}
+                            <a class="SkillNameCardsLink TrainingInProgress">
+                        {% else %}
+                            <a href="{{ data['skill_href'] }}" class="SkillNameCardsLink SkillNameCardTextColor">
+                        {% endif %}
+                            <div class="SkillNameSizing">
+                                {{ data["Skill Title"] }}
+                            </div>
+                            <div class="SkillCardSubTitles">
+                                <container class="SkillSpecificsSizing">
+                                    {{ data["Skill Specifics"] }}
+                                </container>
+                                <container class="FlexColumn SkillDescriptionSizing">
+                                    {% if (data["Skill Description"]|length > 0) %}
+                                        {% for description in data["Skill Description"] %}
+                                            <span>
+                                                {{ description }}
+                                            </span>
+                                        {% endfor %}
+                                    {% endif %}
+                                </container>
+                                {% if (data["Training"]|length > 0) %}
+                                    <container class="TrainingDescription">
+                                        <div>
+                                            <label class="TrainingDescriptionUnderline">Training</label>:
+                                        </div>
+                                        <div class="FlexColumn">
+                                            {% for training in data["Training"] %}
+                                                <span>
+                                                    {{ training }}
+                                                </span>
+                                            {% endfor %}
+                                        </div>
+                                    </container>
+                                {% else %}
+                                    <container></container>
+                                {% endif %}
+                            </div>
+                        {% if (data.Training[0] == "Udemy course to be completed in 2025" or data.Training[0] == "TBD post-2025") %}
+                        </a>
+                        {% else %}
+                        </a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </nav>
+    </div>
+    {% include 'partials/certifications.html' %}
+</div>
+{% include 'partials/footer.html' %}
