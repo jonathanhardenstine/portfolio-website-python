@@ -92,31 +92,29 @@ def skillslist(path):
             "UpdatedDate": datetime.now().strftime(format='%Y'),
             "skillTypeName": "Data Analytics",
             "skillTypeData": skill_types_json,
-            "skillCards": skills_list_json["Data Analytics"],
-            "Certifications": ["/images/Career Certification - Data Analyst Associate.png",
-                               "images/Career Certification - Data Engineer Associate.png",
-                               "/images/Technology Certification - SQL Associate.png"]},
+            "skillCards": skills_list_json["Data Analytics"]["SkillsList"],
+            "Certifications": skills_list_json["Data Analytics"]["Certifications"]},
         "/skillslist-databases": {
             "pageTitle": "Skills",
             "UpdatedDate": datetime.now().strftime(format='%Y'),
             "skillTypeName": "Database Architecture",
             "skillTypeData": skill_types_json,
-            "skillCards": skills_list_json["Database Architecture"],
-            "Certifications": []},
+            "skillCards": skills_list_json["Database Architecture"]["SkillsList"],
+            "Certifications": skills_list_json["Database Architecture"]["Certifications"]},
         "/skillslist-websites": {
             "pageTitle": "Skills",
             "UpdatedDate": datetime.now().strftime(format='%Y'),
             "skillTypeName": "Web Development",
             "skillTypeData": skill_types_json,
-            "skillCards": skills_list_json["Web Development"],
-            "Certifications": []},
+            "skillCards": skills_list_json["Web Development"]["SkillsList"],
+            "Certifications": skills_list_json["Web Development"]["Certifications"]},
         "/skillslist-software": {
             "pageTitle": "Skills",
             "UpdatedDate": datetime.now().strftime(format='%Y'),
             "skillTypeName": "Software Development",
             "skillTypeData": skill_types_json,
-            "skillCards": skills_list_json["Software Development"],
-            "Certifications": []}
+            "skillCards": skills_list_json["Software Development"]["SkillsList"],
+            "Certifications": skills_list_json["Software Development"]["Certifications"]}
     }
 
     return render_template(template_name_or_list="skills-list.html", all_posts=data["/skillslist-"+path])
